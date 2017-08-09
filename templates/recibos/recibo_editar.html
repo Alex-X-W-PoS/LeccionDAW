@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recibo Editar</title>
+</head>
+<body>
+    <h1>Editar Recibo</h1>
+    <form class="form-vertical" method="post">
+        {% csrf_token %}
+	    {{ form.as_p }}
+        <button type="submit">Guardar</button>
+
+    </form>
+
+</body>
+</html>

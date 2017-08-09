@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	<h3>¿Desea eliminar este recibo {{recibos.numero_recibo}}?</h3>
+	<button type="submit">Si, eliminar</button>
+    <a href="{% url 'factura:index_recibo' %}">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Crear Recibo</h1>
+    <form (ngSubmit)="onSubmit()" #reciboForm="ngForm">
+      <div class="form-group">
+        <label for="name">Numero Recibo: </label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="newRecibo.numero_recibo" name="numero_recibo">
+      </div>
+	  
+	  <div class="form-group">
+        <label for="fecha">Fecha Pago: </label>
+        <input type="date" class="form-control" id="fecha" required [(ngModel)]="newRecibo.fecha_pago" name="fecha_pago">
+      </div>
+	  
+	  <div class="form-group">
+        <label for="name_recibe">Nombre de quien recibe: </label>
+        <input type="text" class="form-control" id="name_recibe" required [(ngModel)]="newRecibo.nombre_de_quien_recibe" name="nombre_de_quien_recibe">
+      </div>
+	  
+	  <div class="form-group">
+		<label for="concepto">Concepto: </label>
+		<select class="form-control" id="concepto" required [(ngModel)]="newRecibo.concepto_recibo" name="concepto_recibo">
+			<option *ngFor="let concepto of conceptos" [value]="concepto">{{concepto}}</option>
+		</select>
+		</div>
+ 
+      <div class="form-group">
+        <label for="cantidad">Cantidad: </label>
+        <input type="number" class="form-control" id="cantidad" required [(ngModel)]="newRecibo.cantidad" name="cantidad">
+      </div>
+ 
+      <button type="submit" class="btn btn-success" [disabled]="!reciboForm.form.valid" (click)="onAddRecibo(newRecibo)">Crear</button>
+ 
+    </form>
+</div>

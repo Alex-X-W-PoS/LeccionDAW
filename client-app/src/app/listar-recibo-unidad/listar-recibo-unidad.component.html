@@ -1,0 +1,12 @@
+<table style="width:80%">
+  <tr>
+    <td>Numero Recibo: {{recibo.numero_recibo}}</td>
+    <td>Fecha Pago: {{recibo.fecha_pago}}</td>
+    <td>Nombre del receptor: {{recibo.nombre_de_quien_recibe}}</td>
+	<td>Concepto: {{recibo.concepto_recibo}}</td>
+	<td>Cantidad: {{recibo.cantidad}}</td>
+  </tr>
+  
+</table>
+<button class="edit" (click)="getReciboById(recibo)">Editar</button>
+  <button class="destroy" (click)="removeRecibo(recibo)">Eliminar</button>

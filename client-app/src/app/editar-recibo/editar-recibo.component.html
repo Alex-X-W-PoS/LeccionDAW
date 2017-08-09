@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Editar Recibo</h1>
+    <form (ngSubmit)="onSubmit()" #reciboForm="ngForm">
+      <div class="form-group">
+        <label for="name">Numero Recibo: </label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="recibo.numero_recibo" name="numero_recibo">
+      </div>
+	  
+	  <div class="form-group">
+        <label for="fecha">Fecha Pago: </label>
+        <input type="date" class="form-control" id="fecha" required [(ngModel)]="recibo.fecha_pago" name="fecha_pago">
+      </div>
+	  
+	  <div class="form-group">
+        <label for="name_recibe">Nombre de quien recibe: </label>
+        <input type="text" class="form-control" id="name_recibe" required [(ngModel)]="recibo.nombre_de_quien_recibe" name="nombre_de_quien_recibe">
+      </div>
+	  
+	  <div class="form-group">
+		<label for="concepto">Concepto: </label>
+		<select class="form-control" id="concepto" required [(ngModel)]="recibo.concepto_recibo" name="concepto_recibo">
+			<option *ngFor="let concepto of conceptos" [value]="concepto">{{concepto}}</option>
+		</select>
+		</div>
+ 
+      <div class="form-group">
+        <label for="cantidad">Cantidad: </label>
+        <input type="number" class="form-control" id="cantidad" required [(ngModel)]="recibo.cantidad" name="cantidad">
+      </div>
+ 
+      <button type="submit" class="btn btn-success" [disabled]="!reciboForm.form.valid" (click)="onEditRecibo(recibo)">Actualizar</button>
+ 
+    </form>
+</div>

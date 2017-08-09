@@ -1,0 +1,12 @@
+<section class="main" *ngIf="appComponents.recibos.length > 0">
+<div>
+<h1>Lista Recibos</h1>
+  </div>
+    <div *ngFor="let recibo of appComponents.recibos">
+      <app-listar-recibo-unidad
+        [recibo]="recibo"
+        (edit)="onGetReciboById($event)"
+        (remove)="onRemoveRecibo($event)"></app-listar-recibo-unidad>
+    </div>
+	
+</section>

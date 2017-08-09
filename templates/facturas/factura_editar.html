@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura Editar</title>
+</head>
+<body>
+    <form class="form-vertical" method="post" action="{% url 'factura:actualizarFactura' %}">
+        {% csrf_token %}
+        <h1>Editar Factura.</h1>
+        <p>
+             <label for="id_numero_factura">Numero:</label>
+             <textarea rows="1" name="serie" maxlength="50" placeholder="serie">{{factura.numero_factura}}</textarea>
+        </p>
+        <p>
+             <label for="id_nombre_factura">Nombre:</label>
+              <textarea rows="1" name="serie" maxlength="50" placeholder="serie">{{factura.nombre_factura}}</textarea>
+        </p>
+        <input>
+             <label for="id_fecha_maxima">Fecha Maxima:</label>
+              <textarea rows="1" name="serie" maxlength="50" placeholder="serie">{{factura.fecha_maxima}}</textarea>
+        </p>
+        <p>
+             <label for="id_cantidad">Total:</label>
+              <textarea rows="1" name="serie" maxlength="50" placeholder="serie">{{factura.cantidad}}</textarea>
+        </p>
+        <p>
+             <label for="id_estado_factura">Estado:</label>
+              <textarea rows="1" name="serie" maxlength="50" placeholder="serie">{{factura.estado_factura}}</textarea>
+        </p>
+        <button type="submit">Guardar</button>
+
+    </form>
+
+</body>
+</html>

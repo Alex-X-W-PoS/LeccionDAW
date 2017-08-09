@@ -1,0 +1,11 @@
+diff a/templates/facturas/factura_lista.html b/templates/facturas/factura_lista.html	(rejected hunks)
+@@ -20,6 +20,9 @@
+ 	{% else %}
+ 	<h4>No existen facturas que mostrar</h4>
+ 	{% endif %}
++	<form action="/create" method="GET">
++		<input type="submit" value="Crear nueva factura" />
++	</form>
+ 
+ 
+ </tbody>
